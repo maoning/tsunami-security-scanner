@@ -19,9 +19,9 @@ syntax = "proto3";
 
 package tsunami.proto;
 
-import "network.proto";
-import "software.proto";
-import "web_crawl.proto";
+import "third_party/java_src/tsunami/proto/network.proto";
+import "third_party/java_src/tsunami/proto/software.proto";
+import "third_party/java_src/tsunami/proto/web_crawl.proto";
 
 option java_multiple_files = true;
 option java_outer_classname = "NetworkServiceProtos";
@@ -88,7 +88,7 @@ message WebServiceContext {
 }
 
 // Context information about a web application identified by AI.
-// NEXT ID: 15
+// NEXT ID: 18
 message AiWebServiceContext {
   Software software = 1;
 
@@ -104,18 +104,24 @@ message AiWebServiceContext {
 
   string default_password = 7;
 
-  bool allows_code_execution = 8;
+  bool is_admin_page = 8;
 
-  bool allows_file_system_access = 9;
+  bool is_metrics_dashboard = 9;
 
-  bool is_data_storage_solution = 10;
+  bool is_kubernetes_deployment = 10;
 
-  bool allows_workflow_execution = 11;
+  bool allows_code_execution = 11;
 
-  bool user_sign_up_form_present = 12;
+  bool allows_file_system_access = 12;
 
-  bool is_exposed_web_admin_ui = 13;
+  bool is_data_storage_solution = 13;
+
+  bool allows_workflow_execution = 14;
+
+  bool user_sign_up_form_present = 15;
+
+  bool is_exposed_web_admin_ui = 16;
 
   // The rationale for the AI's decision.
-  string rationale = 14;
+  string rationale = 17;
 }
