@@ -120,7 +120,7 @@ message AiWebServiceContext {
 
   bool allows_workflow_execution = 15;
 
-  bool user_sign_up_form_present = 16;
+  bool is_user_sign_up_form_present = 16;
 
   bool is_exposed_web_admin_ui = 17;
 
