@@ -67,6 +67,7 @@ message NetworkService {
 message ServiceContext {
   oneof context {
     WebServiceContext web_service_context = 1;
+    AiWebServiceContext ai_web_service_context = 2;
   }
 }
 
@@ -84,4 +85,37 @@ message WebServiceContext {
 
   // Fingerprinter's crawling results for this web service.
   repeated CrawlResult crawl_results = 4;
+}
+
+// Context information about a web application identified by AI.
+// NEXT ID: 15
+message AiWebServiceContext {
+  Software software = 1;
+
+  string version = 2;
+
+  bool is_login_form_present = 3;
+
+  bool is_authentication_required = 4;
+
+  bool has_known_default_username_password = 5;
+
+  string default_username = 6;
+
+  string default_password = 7;
+
+  bool allows_code_execution = 8;
+
+  bool allows_file_system_access = 9;
+
+  bool is_data_storage_solution = 10;
+
+  bool allows_workflow_execution = 11;
+
+  bool user_sign_up_form_present = 12;
+
+  bool is_exposed_web_admin_ui = 13;
+
+  // The rationale for the AI's decision.
+  string rationale = 14;
 }
