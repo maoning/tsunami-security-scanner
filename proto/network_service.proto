@@ -88,7 +88,7 @@ message WebServiceContext {
 }
 
 // Context information about a web application identified by AI.
-// NEXT ID: 18
+// NEXT ID: 19
 message AiWebServiceContext {
   Software software = 1;
 
@@ -110,18 +110,20 @@ message AiWebServiceContext {
 
   bool is_kubernetes_deployment = 10;
 
-  bool allows_code_execution = 11;
+  bool is_demo_instance = 11;
 
-  bool allows_file_system_access = 12;
+  bool allows_code_execution = 12;
 
-  bool is_data_storage_solution = 13;
+  bool allows_file_system_access = 13;
 
-  bool allows_workflow_execution = 14;
+  bool is_data_storage_solution = 14;
 
-  bool user_sign_up_form_present = 15;
+  bool allows_workflow_execution = 15;
 
-  bool is_exposed_web_admin_ui = 16;
+  bool user_sign_up_form_present = 16;
+
+  bool is_exposed_web_admin_ui = 17;
 
   // The rationale for the AI's decision.
-  string rationale = 17;
+  string rationale = 18;
 }
