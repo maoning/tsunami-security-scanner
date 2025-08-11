@@ -19,9 +19,9 @@ syntax = "proto3";
 
 package tsunami.proto;
 
-import "third_party/java_src/tsunami/proto/network.proto";
-import "third_party/java_src/tsunami/proto/software.proto";
-import "third_party/java_src/tsunami/proto/web_crawl.proto";
+import "network.proto";
+import "software.proto";
+import "web_crawl.proto";
 
 option java_multiple_files = true;
 option java_outer_classname = "NetworkServiceProtos";
