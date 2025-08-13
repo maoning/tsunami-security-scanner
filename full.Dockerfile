@@ -2,8 +2,8 @@
 FROM ghcr.io/google/tsunami-scanner-core:latest AS core
 
 # Plugins
-FROM ghcr.io/google/tsunami-plugins-local-nmap:latest AS plugins-local-nmap
-FROM ghcr.io/google/tsunami-plugins-local-ai:latest AS plugins-local-ai
+FROM ghcr.io/maoning/tsunami-plugins-nmap:latest AS plugins-nmap
+FROM ghcr.io/maoning/tsunami-plugins-ai:latest AS plugins-ai
 
 # Release a full version
 FROM ubuntu:latest AS release
@@ -17,8 +17,8 @@ RUN apt-get update \
 
 COPY --from=core /usr/tsunami/ /usr/tsunami/
 
-COPY --from=plugins-local-nmap /usr/tsunami/plugins/ /usr/tsunami/plugins/
-COPY --from=plugins-local-ai /usr/tsunami/plugins/ /usr/tsunami/plugins/
+COPY --from=plugins-nmap /usr/tsunami/plugins/ /usr/tsunami/plugins/
+COPY --from=plugins-ai /usr/tsunami/plugins/ /usr/tsunami/plugins/
 
 # Create wrapper scripts
 WORKDIR /usr/tsunami
