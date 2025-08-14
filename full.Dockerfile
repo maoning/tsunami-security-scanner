@@ -1,5 +1,5 @@
 # Core engine
-FROM ghcr.io/google/tsunami-scanner-core:latest AS core
+FROM ghcr.io/maoning/tsunami-scanner-core:latest AS core
 
 # Plugins
 FROM ghcr.io/maoning/tsunami-plugins-nmap:latest AS plugins-nmap
